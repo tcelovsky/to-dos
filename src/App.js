@@ -6,6 +6,12 @@ function App() {
   const [todos, setTodos] = useState(["Build a React App", "Write a blogpost"]);
   const [input, setInput] = useState("");
 
+  const addItem = (e) => {
+    e.preventDefault();
+    setTodos([...todos, input]);
+    setInput("");
+  };
+
   return (
     <div className="App">
       <h2>To Do List</h2>
@@ -19,7 +25,7 @@ function App() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         ></TextField>
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" onClick={addItem}>
           Add Item
         </Button>
       </form>
