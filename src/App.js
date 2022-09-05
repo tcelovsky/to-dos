@@ -29,6 +29,11 @@ function App() {
           Add Item
         </Button>
       </form>
+      <ul>
+        {todos.map((todo) => (
+          <li>{todo}</li>
+        ))}
+      </ul>
     </div>
   );
 }
