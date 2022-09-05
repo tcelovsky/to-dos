@@ -19,6 +19,9 @@ function App() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         ></TextField>
+        <Button variant="contained" color="primary">
+          Add Item
+        </Button>
       </form>
     </div>
   );
