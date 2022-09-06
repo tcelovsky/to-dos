@@ -10,3 +10,5 @@ const Todo = ({ todo }) => {
     </List>
   );
 };
+
+export default Todo;
