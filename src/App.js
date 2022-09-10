@@ -8,6 +8,8 @@ import {
   onSnapshot,
   serverTimestamp,
   addDoc,
+  query,
+  orderBy,
 } from "firebase/firestore";
 
 function App() {
