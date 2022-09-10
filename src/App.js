@@ -35,7 +35,6 @@ function App() {
       todo: input,
       timestamp: serverTimestamp(),
     });
-    // setTodos([...todos, input]);
     setInput("");
   };
 
@@ -57,8 +56,8 @@ function App() {
         </Button>
       </form>
       <ul>
-        {todos.map(({ todo }) => (
-          <Todo todo={todo} />
+        {todos.map((item) => (
+          <Todo key={item.id} arr={item} />
         ))}
       </ul>
     </div>
