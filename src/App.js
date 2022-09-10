@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { TextField, Button } from "@mui/material";
 import Todo from "./components/Todo";
+import { db } from "./firebase.js";
 
 function App() {
   const [todos, setTodos] = useState(["Build a React App", "Write a blogpost"]);
