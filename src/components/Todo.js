@@ -3,12 +3,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { db } from "../firebase.js";
 import { doc, deleteDoc } from "firebase/firestore";
 
-const Todo = ({ todo }) => {
+const Todo = ({ arr }) => {
   return (
     <List className="todo_list">
       <ListItem>
         <ListItemAvatar />
-        <ListItemText primary={todo} secondary={todo} />
+        <ListItemText primary={arr.item.todo} secondary={arr.item.todo} />
       </ListItem>
     </List>
   );
