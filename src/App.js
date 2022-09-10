@@ -12,6 +12,8 @@ import {
   orderBy,
 } from "firebase/firestore";
 
+const q = query(collection(db, "todos"), orderBy("timestamp", "desc"));
+
 function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
