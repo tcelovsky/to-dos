@@ -22,7 +22,11 @@ function App() {
 
   const addItem = (e) => {
     e.preventDefault();
-    setTodos([...todos, input]);
+    addDoc(collection(db, "todos"), {
+      todo: input,
+      timestamp: serverTimestamp(),
+    });
+    // setTodos([...todos, input]);
     setInput("");
   };
 
