@@ -6,9 +6,14 @@ import { db } from "./firebase.js";
 import { collection, onSnapshot } from "firebase/firestore";
 
 function App() {
-  // const [todos, setTodos] = useState(["Build a React App", "Write a blogpost"]);
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
+
+  useEffect(() => {
+    onSnapshot(collection(db, "todos"), (snapshot) => {
+      setTodos(snapshot.docs.map((doc) => doc.data()));
+    });
+  }, [input]);
 
   const addItem = (e) => {
     e.preventDefault();
@@ -34,7 +39,7 @@ function App() {
         </Button>
       </form>
       <ul>
-        {todos.map((todo) => (
+        {todos.map(({ todo }) => (
           <Todo todo={todo} />
         ))}
       </ul>
