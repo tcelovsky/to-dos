@@ -19,8 +19,13 @@ function App() {
   const [input, setInput] = useState("");
 
   useEffect(() => {
-    onSnapshot(collection(db, "todos"), (snapshot) => {
-      setTodos(snapshot.docs.map((doc) => doc.data()));
+    onSnapshot(q, (snapshot) => {
+      setTodos(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          item: doc.data(),
+        }))
+      );
     });
   }, [input]);
 
