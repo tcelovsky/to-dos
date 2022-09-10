@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import { TextField, Button } from "@mui/material";
 import Todo from "./components/Todo";
 import { db } from "./firebase.js";
+import { collection, onSnapshot } from "firebase/firestore";
 
 function App() {
-  const [todos, setTodos] = useState(["Build a React App", "Write a blogpost"]);
+  // const [todos, setTodos] = useState(["Build a React App", "Write a blogpost"]);
+  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
 
   const addItem = (e) => {
