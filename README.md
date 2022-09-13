@@ -6,10 +6,6 @@ Styles were created with [MUI icons and components](https://mui.com/material-ui/
 
 ## Running the App
 
-Navigate to the backend directory (`cd backend`) and start Rails server by entering `rails s` in your terminal. Navigate to the frontend directory (`cd frontend-2.0`) and start the server by entering `npm start` in your terminal. A custom Rake command `rake db:dcms` will drop, create, migrate and seed the database with seed data.
-
-## Running the App
-
 In the project directory, you can run:
 
 ### `npm start`
