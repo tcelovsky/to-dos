@@ -5,19 +5,19 @@ import { doc, deleteDoc } from "firebase/firestore";
 import Item from "./Item";
 import "../todo.css";
 
-const Todo = ({ arr }) => {
+const Todo = ({ list }) => {
   return (
     <List className="todo_list">
       <ListItem>
         <ListItemAvatar />
-        <ListItemText primary={arr.item.listName} />
-        <Item key={arr.item.id} item={arr.item.listName} />
+        <ListItemText primary={list.item.listName} />
       </ListItem>
+      <Item key={list.item.id} item={list.item.listName} />
       <DeleteIcon
         fontSize="large"
         style={{ opacity: 0.7 }}
         onClick={() => {
-          deleteDoc(doc(db, "todos", arr.id));
+          deleteDoc(doc(db, "Lists", list.id));
         }}
       />
     </List>
