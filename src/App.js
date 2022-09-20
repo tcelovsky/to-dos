@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { TextField, Button } from "@mui/material";
 import Todo from "./components/Todo";
+import Header from "./components/Header";
 import { db } from "./firebase.js";
 import {
   collection,
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>To Do List</h2>
+      <Header />
       <form>
         <TextField
           id="outlined-basic"
