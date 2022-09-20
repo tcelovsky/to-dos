@@ -1,4 +1,11 @@
 .App {
   display:grid;
   place-items:center;
+  /* grid-template-columns: repeat(4, calc(25% - 10px));
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  place-content: center;
+  grid-auto-flow: row;
+  padding: 20px; */
 }
