@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     onSnapshot(q, (snapshot) => {
-      setTodos(
+      setLists(
         snapshot.docs.map((doc) => ({
           id: doc.id,
           item: doc.data(),
@@ -68,8 +68,8 @@ function App() {
         </Button>
       </form>
       <ul>
-        {todos.map((item) => (
-          <Todo key={item.id} arr={item} />
+        {lists.map((list) => (
+          <Todo key={list.id} list={list} />
         ))}
       </ul>
     </div>
