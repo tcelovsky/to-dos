@@ -16,6 +16,7 @@ import {
 const q = query(collection(db, "todos"), orderBy("timestamp", "desc"));
 
 function App() {
+  const [lists, setLists] = useState([]);
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
 
@@ -30,7 +31,7 @@ function App() {
     });
   }, [input]);
 
-  const addItem = (e) => {
+  const addList = (e) => {
     e.preventDefault();
     addDoc(collection(db, "todos"), {
       todo: input,
@@ -45,15 +46,15 @@ function App() {
       <form>
         <TextField
           id="outlined-basic"
-          label="Create Item"
+          label="Add New List"
           variant="outlined"
           style={{ margin: "0px 5px" }}
           size="small"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         ></TextField>
-        <Button variant="contained" color="primary" onClick={addItem}>
-          Add Item
+        <Button variant="contained" color="primary" onClick={addList}>
+          Add New List
         </Button>
       </form>
       <ul>
