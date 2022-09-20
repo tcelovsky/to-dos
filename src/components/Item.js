@@ -7,7 +7,7 @@ const Item = ({ item }) => {
   return (
     <ListItem>
       <ListItemAvatar />
-      <ListItemText secondary={item.listName.todo} />
+      <ListItemText secondary={item.todo} />
     </ListItem>
   );
 };
