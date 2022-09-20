@@ -9,7 +9,7 @@ const Todo = ({ arr }) => {
     <List className="todo_list">
       <ListItem>
         <ListItemAvatar />
-        <ListItemText primary={arr.item.todo} secondary={arr.item.todo} />
+        <ListItemText primary={arr.item.listName} secondary={arr.item.todo} />
       </ListItem>
       <DeleteIcon
         fontSize="large"
