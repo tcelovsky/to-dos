@@ -13,12 +13,10 @@ import {
   orderBy,
 } from "firebase/firestore";
 
-// const q = query(collection(db, "todos"), orderBy("timestamp", "desc"));
 const q = query(collection(db, "Lists"), orderBy("timestamp", "desc"));
 
 function App() {
   const [lists, setLists] = useState([]);
-  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
 
   useEffect(() => {
@@ -26,20 +24,11 @@ function App() {
       setLists(
         snapshot.docs.map((doc) => ({
           id: doc.id,
-          item: doc.data(),
+          list: doc.data(),
         }))
       );
     });
   }, [input]);
-
-  // const addList = (e) => {
-  //   e.preventDefault();
-  //   addDoc(collection(db, "todos"), {
-  //     todo: input,
-  //     timestamp: serverTimestamp(),
-  //   });
-  //   setInput("");
-  // };
 
   const addList = (e) => {
     e.preventDefault();

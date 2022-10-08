@@ -10,9 +10,9 @@ const Todo = ({ list }) => {
     <List className="todo_list">
       <ListItem>
         <ListItemAvatar />
-        <ListItemText primary={list.item.listName} />
+        <ListItemText primary={list.list.listName} />
       </ListItem>
-      <Item key={list.item.id} item={list.item.listName} />
+      <Item key={list.list.id} item={list.list} />
       <DeleteIcon
         fontSize="large"
         style={{ opacity: 0.7 }}
